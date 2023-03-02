@@ -4,7 +4,7 @@ import moby from '../assets/Marry Me.mp3';
 import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
 import image3 from '../assets/image3.jpg';
-import image from '../assets/image';
+import image from '../assets/image.jpg';
 
 const Sound = new Audio(moby);
 
