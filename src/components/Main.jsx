@@ -5,36 +5,42 @@ import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
 import image3 from '../assets/image3.jpg';
 import image from '../assets/image.jpg';
-
 const Sound = new Audio(moby);
 
 const Main = () => {
   useEffect(() => {
-    Sound.load();
+    playSound();
+    return () => {
+      stopSound();
+    };
   }, []);
 
-  const playSound = () => {
+  function playSound() {
     Sound.play();
-  };
+  }
 
-  const stopSound = () => {
+  function stopSound() {
     Sound.pause();
     Sound.currentTime = 0;
-  };
+  }
   return (
-    <div className='relative bg-white'>
-      <h1 className='pt-10 pb-2 text-3xl text-center font-lato font-extrabold text-black bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
-        Pernikahan
-      </h1>
-      <h1 className='text-3xl text-center font-lato font-extrabold text-black bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
-        Frendi & Erfi
-      </h1>
-      <div className='flex flex-col justify-center items-center p-4'>
-        <img
-          className='w-1/4 h-1/4 object-cover rounded-sm'
-          src={image1}
-          alt='images'
-        />
+    <div className='bg-white min-h-screen overflow-auto'>
+      <div className='flex justify-center items-center h-screen w-screen bg-contain bg-repeat bg-[url("../../../image.jpg")]'>
+        <div className='bg-white lg:bg-transparent px-2 py-3 lg:p-20'>
+          <h1 className='text-3xl lg:text-8xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
+            Pernikahan
+          </h1>
+          <h1 className='text-2xl lg:text-6xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
+            Nurrohman & Iin Subekti
+          </h1>
+        </div>
+        {/* <div className='flex flex-col justify-center items-center p-4'>
+          <img
+            className='w-1/4 h-1/4 object-cover rounded-sm'
+            src={image}
+            alt='images'
+          />
+        </div> */}
       </div>
       <div>
         <div className='text-center'>
@@ -52,26 +58,28 @@ const Main = () => {
         <div className='flex flex-row-reverse justify-between p-4'>
           <div className='w-4/12'>
             <h1 className="text-cyan-600 text-center text-xl font-['Nunito'] pt-2 md:pt-0 pb-7 md:pb-2">
-              Erfi Zuliani
+              Iin Subekti
             </h1>
             <h1 className='text-cyan-600 text-center'>
-              Putri Dari Bapak Hudi Utoyo
+              Putri Dari Bapak Mistar (Penjol)
             </h1>
             <h1 className='text-cyan-600 text-center'>&</h1>
-            <h1 className='text-cyan-600 text-center'>Ibu Jumiyati (Almh)</h1>
+            <h1 className='text-cyan-600 text-center'>
+              Ibu Sudi Rahayu (Yayuk)
+            </h1>
           </div>
           <div className='text-2xl font-bold flex items-center text-cyan-600 '>
             &
           </div>
           <div className='w-4/12'>
             <h1 className="text-cyan-600 text-center text-xl font-['Nunito'] pb-2">
-              Frendi Agus Setiawan
+              Nurrohman
             </h1>
             <h1 className='text-cyan-600 text-center'>
-              Putra Dari Bapak H.Supandar
+              Putra Dari Bapak Ngamidah
             </h1>
             <h1 className='text-cyan-600 text-center'>&</h1>
-            <h1 className='text-cyan-600 text-center'>Ibu Hj.Walminah</h1>
+            <h1 className='text-cyan-600 text-center'>Ibu Sartini </h1>
           </div>
         </div>
 
@@ -83,41 +91,30 @@ const Main = () => {
             <h1 className='text-cyan-600 text-xl font-bold text-center'>
               Akad
             </h1>
-            <h1 className='text-cyan-600 text-center'>Minggu, 29 Mei 2022</h1>
+            <h1 className='text-cyan-600 text-center'>Minggu, 12 Maret 2023</h1>
             <h1 className='text-cyan-600 text-center'>Pukul 09:00</h1>
             <h1 className='text-pink-400 font-semibold text-center'>
               Di Kediaman Mempelai Wanita
             </h1>
             <h1 className='text-cyan-600 font-bold text-center'>
-              Jln Perintis Kemerdekaan No 10
+              Panjangsari Baru
             </h1>
-            <h1 className='text-cyan-600 font-bold text-center'>
-              Joho Temanggung
-            </h1>
+            <h1 className='text-cyan-600 font-bold text-center'>Parakan</h1>
           </div>
           <div className='w-4/12'>
             <h1 className='text-cyan-600 text-xl font-bold text-center'>
               Resepsi
             </h1>
-            <h1 className='text-cyan-600 text-center'>Minggu, 5 Juni 2022</h1>
-            <h1 className='text-cyan-600 text-center'>Pukul 10:00</h1>
-            <h1 className='text-pink-400 font-semibold text-center mt-2 mb-1 md:mt-0 md:mb-0'>
-              Di Kediaman Mempelai Pria
+            <h1 className='text-cyan-600 text-center'>Jum’at, 17 Maret 2023</h1>
+            <h1 className='text-cyan-600 text-center'>10.00 s/d Selesai</h1>
+            <h1 className='text-pink-400 font-semibold text-center'>
+              Balai Pertemuan Panjangsari Baru Rw 10
             </h1>
             <h1 className='text-cyan-600 font-bold text-center'>
-              Sempon RT/RW 03/03 Sriwungu
+              Panjangsari Baru
             </h1>
-            <h1 className='text-cyan-600 font-bold text-center'>
-              Tlogomulyo Temanggung
-            </h1>
+            <h1 className='text-cyan-600 font-bold text-center'>Parakan</h1>
           </div>
-        </div>
-        <div>
-          <h1 className='text-green-600 font-bold text-xl text-center mb-4'>
-            Hiburan
-          </h1>
-          <h1 className='text-cyan-600 text-center'>Senin, 06 Juni 2022</h1>
-          <h1 className='text-cyan-600 text-center'>Kuda Lumping</h1>
         </div>
 
         <div className='text-center  mt-4 mb-4'>
@@ -126,43 +123,49 @@ const Main = () => {
           </h1>
           <h1 className='text-cyan-600'>Kami Ucapakan Banyak Terima Kasih</h1>
           <h1 className='text-cyan-600'>Kami Yang Berbahagia</h1>
-          <h1 className='text-cyan-600'>Erfi & Frendi</h1>
+          <h1 className='text-cyan-600'>Nurrohman & Iin Subekti</h1>
           <h1 className='text-green-600 font-bold text-xl m-4'>
             Turut Mengundang
           </h1>
-          <h1 className='text-cyan-600'>Bp. Tukimin</h1>
-          <h1 className='text-cyan-600'>Bp. Yamidi</h1>
-          <h1 className='text-cyan-600'>Ibu Sri Wahyuni</h1>
+          <h1 className='text-cyan-600'>Heni Setyowati & Gatot</h1>
+          <h1 className='text-cyan-600'>
+            Budi Utami (uut) & Imbuh Erdiyanto (wowok)
+          </h1>
+          <h1 className='text-cyan-600'>Dwi Lestari & Wali</h1>
+          <h1 className='text-cyan-600'>Pak Naslim & Ibu Suprih     </h1>
         </div>
         <div className='text-center mb-4'>
           <h1 className='text-green-600 font-bold text-xl'>Galeri</h1>
         </div>
-        <div className='flex flex-wrap flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 space-x-0 md:space-x-1 p-0'>
-          <img
-            className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
-            src={image1}
-            alt='images'
-          />
-          <img
-            className='w-2/12 h-1/2 md:w-2/12 object-cover rounded-sm'
-            src={image2}
-            alt='images'
-          />
-          <img
-            className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
-            src={image3}
-            alt='images'
-          />
-          <img
-            className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
-            src={image}
-            alt='images'
-          />
-          <img
-            className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
-            src={image}
-            alt='images'
-          />
+        <div className='flex flex-wrap md:flex-row justify-between items-center space-y-2 md:space-y-0 space-x-0 md:space-x-1 p-4 lg:p-0'>
+          <figure className='w-12/12 lg:w-2/12'>
+            <img
+              className=' object-cover rounded-sm'
+              src={image1}
+              alt='images'
+            />
+          </figure>
+          <figure className='w-6/12 h-auto lg:w-2/12'>
+            <img
+              className=' object-cover rounded-sm'
+              src={image2}
+              alt='images'
+            />
+          </figure>
+          <figure className='w-6/12 h-auto lg:w-2/12'>
+            <img
+              className=' object-cover rounded-sm'
+              src={image3}
+              alt='images'
+            />
+          </figure>
+          <figure className='w-12/12 lg:w-2/12'>
+            <img
+              className=' object-cover rounded-sm'
+              src={image}
+              alt='images'
+            />
+          </figure>
         </div>
       </div>
       <div className='flex items-center flex-col lg:flex-row fixed top-1/2 left-2'>
@@ -179,7 +182,7 @@ const Main = () => {
           stop_circle
         </span>
       </div>
-      <footer className='text-white font-lato text-center p-4 cursor-pointer'>
+      <footer className='text-white font-lato text-center p-4 cursor-pointer mt-16'>
         <a
           className='text-md font-lato font-lato font-extrabold text-black bg-clip-text bg-gradient-to-br from-pink-400 to-red-700'
           href='https://andi-3ujiqdvp9-andi-faizal94.vercel.app/'
