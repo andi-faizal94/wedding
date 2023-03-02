@@ -4,7 +4,7 @@ import moby from '../assets/Marry Me.mp3';
 import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
 import image3 from '../assets/image3.jpg';
-// import image4 from '../assets/image4.jpg';
+import image4 from '../assets/image4.jpg';
 
 const Sound = new Audio(moby);
 
@@ -153,16 +153,16 @@ const Main = () => {
             src={image3}
             alt='images'
           />
-          {/* <img
+          <img
             className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
             src={image4}
             alt='images'
-          /> */}
-          {/* <img
+          />
+          <img
             className='w-2/12 h-1/2  md:w-2/12 object-cover rounded-sm'
             src={image4}
             alt='images'
-          /> */}
+          />
         </div>
       </div>
       <div className='flex items-center flex-col lg:flex-row fixed top-1/2 left-2'>

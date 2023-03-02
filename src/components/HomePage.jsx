@@ -1,13 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import moby from '../assets/Marry Me.mp3';
+const Sound = new Audio(moby);
 
-const Login = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   const handleButton = () => {
-    localStorage.setItem('user', 'token');
+    Sound.play();
     navigate('/home');
   };
+
   return (
     <div className='flex flex-col justify-center items-center main bg-[#0a192f] min-h-screen w-full'>
       <h1 className='text-3xl text-center font-lato font-extralight text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-blue-500 mb-4'>
@@ -29,4 +32,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default HomePage;
