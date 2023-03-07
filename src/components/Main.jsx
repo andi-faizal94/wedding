@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { motion, useScroll, useTime } from 'framer-motion';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 import moby from '../assets/Marry Me.mp3';
 import image1 from '../assets/image1.jpg';
@@ -10,14 +10,16 @@ import image from '../assets/image.jpg';
 const Sound = new Audio(moby);
 
 const Main = () => {
-  const { scrollYProgress } = useScroll();
-
   useEffect(() => {
     playSound();
   }, []);
 
-  function playSound() {
-    Sound.play();
+  async function playSound() {
+    try {
+      await Sound.play();
+    } catch (error) {
+      stopSound();
+    }
   }
 
   function stopSound() {

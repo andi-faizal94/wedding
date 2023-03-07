@@ -7,11 +7,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleButton = () => {
-    // let timer = setTimeout(() => Sound.play(), 1 * 1000);
     navigate('/home');
-    // return () => {
-    //   clearTimeout(timer);
-    // };
   };
 
   return (
@@ -25,9 +21,9 @@ const HomePage = () => {
       <h1 className='text-md text-center font-lato font-normal text-transparent bg-clip-text bg-gradient-to-br from-cyan-100 to-blue-500 mb-4'>
         Yth
       </h1>
-      {/* <h1 className='text-md text-center font-lato font-normal text-transparent bg-clip-text bg-gradient-to-br from-cyan-100 to-blue-500'>
-      Bpk /Ibu /
-      </h1> */}
+      <h1 className='text-md text-center font-lato font-normal text-transparent bg-clip-text bg-gradient-to-br from-cyan-100 to-blue-500 mb-2'>
+        Bpk / Ibu / Saudara / Saudari
+      </h1>
 
       <button onClick={handleButton} className='bg-white w-36 h-10 p-2 mb-4'>
         Buka Undangan
