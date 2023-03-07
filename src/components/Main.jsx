@@ -39,10 +39,10 @@ const Main = () => {
           }}
           className='lg:bg-transparent px-2 py-3 lg:p-20'
         >
-          <h1 className='text-3xl lg:text-8xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
+          <h1 className='text-3xl lg:text-8xl text-center font-lato font-extrabold text-white lg:text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
             Pernikahan
           </h1>
-          <h1 className='text-2xl lg:text-6xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
+          <h1 className='text-2xl lg:text-6xl text-center font-lato font-extrabold text-white lg:text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
             Nurrohman & Iin Subekti
           </h1>
         </motion.div>
