@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { motion, useScroll, useTime } from 'framer-motion';
+
 import moby from '../assets/Marry Me.mp3';
 import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
@@ -8,11 +10,10 @@ import image from '../assets/image.jpg';
 const Sound = new Audio(moby);
 
 const Main = () => {
+  const { scrollYProgress } = useScroll();
+
   useEffect(() => {
     playSound();
-    return () => {
-      stopSound();
-    };
   }, []);
 
   function playSound() {
@@ -26,23 +27,35 @@ const Main = () => {
   return (
     <div className='bg-white min-h-screen overflow-auto'>
       <div className='flex justify-center items-center h-screen w-screen bg-contain bg-repeat bg-[url("../../../image.jpg")]'>
-        <div className='bg-white lg:bg-transparent px-2 py-3 lg:p-20'>
+        <motion.div
+          animate={{
+            scale: [1, 2, 2, 2, 1],
+            rotate: [0, 0, 270, 270, 0],
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className='lg:bg-transparent px-2 py-3 lg:p-20'
+        >
           <h1 className='text-3xl lg:text-8xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
             Pernikahan
           </h1>
           <h1 className='text-2xl lg:text-6xl text-center font-lato font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-100 to-red-900 mb-4'>
             Nurrohman & Iin Subekti
           </h1>
-        </div>
-        {/* <div className='flex flex-col justify-center items-center p-4'>
-          <img
-            className='w-1/4 h-1/4 object-cover rounded-sm'
-            src={image}
-            alt='images'
-          />
-        </div> */}
+        </motion.div>
       </div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
         <div className='text-center'>
           <h1 className='text-green-600 text-xl m-2'>
             بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم.
@@ -167,7 +180,7 @@ const Main = () => {
             />
           </figure>
         </div>
-      </div>
+      </motion.div>
       <div className='flex items-center flex-col lg:flex-row fixed top-1/2 left-2'>
         <span
           onClick={playSound}
@@ -182,14 +195,6 @@ const Main = () => {
           stop_circle
         </span>
       </div>
-      <footer className='text-white font-lato text-center p-4 cursor-pointer mt-16'>
-        <a
-          className='text-md font-lato font-lato font-extrabold text-black bg-clip-text bg-gradient-to-br from-pink-400 to-red-700'
-          href='https://andi-3ujiqdvp9-andi-faizal94.vercel.app/'
-        >
-          Made by Andi
-        </a>
-      </footer>
     </div>
   );
 };
